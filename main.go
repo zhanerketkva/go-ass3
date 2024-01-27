@@ -10,7 +10,6 @@ import (
     _ "github.com/lib/pq"
 )
 
-// Product structure represents a product in the store
 type Product struct {
     ID    int
     Name  string
@@ -21,7 +20,6 @@ type Product struct {
 var db *sql.DB
 
 func initDB() *sql.DB {
-    // Replace with your actual PostgreSQL connection details
     connStr := "user=postgres password=Medina+15 dbname=go sslmode=disable"
     db, err := sql.Open("postgres", connStr)
     if err != nil {
@@ -29,7 +27,6 @@ func initDB() *sql.DB {
         panic(err)
     }
 
-    // Ensure the database connection is successful
     err = db.Ping()
     if err != nil {
         fmt.Println("Error connecting to the database:", err)
@@ -56,7 +53,6 @@ func fetchProductsFromDB(filter, sortBy string) ([]Product, error) {
 
     if sortBy != "" {
         if sortBy == "size" {
-            // Custom sorting order for sizes: xs, x, m, l, xl, xxl
             query += " ORDER BY CASE size " +
                 "WHEN 'xs' THEN 1 " +
                 "WHEN 's' THEN 2 " +
@@ -259,7 +255,6 @@ func EditProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Fetch the product details from the database
 	var product Product
 	err = db.QueryRow("SELECT id, name, size, price FROM products WHERE id = $1", productID).
 		Scan(&product.ID, &product.Name, &product.Size, &product.Price)
