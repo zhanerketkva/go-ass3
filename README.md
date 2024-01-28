@@ -23,6 +23,12 @@ Navigate through the product list using pagination.
 Rate Limiting:
 # Crafted by:
 Mazhitova Guzal and Tokenova Zhanerke and Assan Nursapayev
+
+# Pages:
+![page](https://github.com/zhanerketkva/go-ass3/blob/main/photo_5312328608020288134_w.jpg)
+![page](https://github.com/zhanerketkva/go-ass3/blob/main/photo_5267517749637272645_y.jpg)
+![page](https://github.com/zhanerketkva/go-ass3/blob/main/photo_5312328608020288135_w.jpg)
+
 # Instructions to Run the Application:
 Follow these steps to run the Online Store Web Application:
 
